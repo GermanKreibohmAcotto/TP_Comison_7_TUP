@@ -9,6 +9,7 @@ import Home from "../pages/Home";
 import NotFound from "../pages/NotFound";
 import Dashboard from "../dashboard/Dashboard";
 import Pagos from "../pages/Pagos";
+import Socios from "../pages/Socios";
 
 const AppRouter = () => {
   return (
@@ -20,6 +21,7 @@ const AppRouter = () => {
         {/* Rutas del dashboard */}
         <Route path={ROUTES.DASHBOARD} element={<DashboardLayout />}>
           <Route index element={<Dashboard />} />
+          <Route path={ROUTES.SOCIOS} element={<Socios />} />
           <Route path={ROUTES.PAGOS} element={<Pagos />} />
           {/* Las demás rutas se agregarán después */}
         </Route>
