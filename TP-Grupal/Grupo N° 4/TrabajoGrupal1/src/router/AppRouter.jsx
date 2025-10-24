@@ -6,6 +6,7 @@ import DashboardLayout from "../layout/DashboardLayout";
 
 // Pages
 import Home from "../pages/Home";
+import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
 import Dashboard from "../dashboard/Dashboard";
 import Pagos from "../pages/Pagos";
@@ -16,6 +17,9 @@ const AppRouter = () => {
       <Routes>
         {/* Ruta temporal de inicio */}
         <Route path={ROUTES.HOME} element={<Home />} />
+
+        {/* Ruta de login */}
+        <Route path={ROUTES.LOGIN} element={<Login />} />
 
         {/* Rutas del dashboard */}
         <Route path={ROUTES.DASHBOARD} element={<DashboardLayout />}>
