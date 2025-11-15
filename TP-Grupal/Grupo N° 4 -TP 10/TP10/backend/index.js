@@ -3,6 +3,7 @@ import cors from "cors";
 import morgan from "morgan";
 import helmet from "helmet";
 import dotenv from "dotenv";
+import { testConnection } from "./db/db.js";
 
 dotenv.config();
 
@@ -26,7 +27,11 @@ app.get("/api/ping", (req, res) => {
   res.json({ ok: true });
 });
 
-app.listen(PORT, () => {
+// Iniciar servidor y probar conexión a la base de datos
+app.listen(PORT, async () => {
   console.log(`🚀 Servidor escuchando en http://localhost:${PORT}`);
   console.log(`🔧 Probar ping: http://localhost:${PORT}/api/ping`);
+  
+  // Probar conexión a la base de datos
+  await testConnection();
 });
